@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -16,16 +16,24 @@
             <!-- <h1 class="logo">Cyber<span>Secure</span></h1> -->
             <img src="./logo.png" alt=" Cyber security logo" class="logo">
 
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            <!-- FIX: Hamburger Toggle Button -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
 
-            <a href="#" class="nav-btn">Get Protected</a>
+            <!-- FIX: Wrapper for collapsible items -->
+            <div class="nav-wrapper">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <a href="#" class="nav-btn">Get Protected</a>
+            </div>
         </div>
     </header>
 
@@ -267,6 +275,18 @@
         </div>
     </footer>
 
+    <!-- FIX: Script for Hamburger Toggle -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navWrapper = document.querySelector('.nav-wrapper');
+
+        if (menuToggle && navWrapper) {
+            menuToggle.addEventListener('click', () => {
+                navWrapper.classList.toggle('active');
+                // Optional: Change icon if needed, or add animation class
+            });
+        }
+    </script>
 </body>
 
 </html>
